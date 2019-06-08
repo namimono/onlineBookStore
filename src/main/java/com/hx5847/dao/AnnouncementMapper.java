@@ -12,7 +12,7 @@ public interface AnnouncementMapper {
     public Announcement getAnnounceById(Integer id);
 
 
-    @Select("select anno_id,title,upload_time,type from announcement")
+    @Select("select anno_id as annoId,title,upload_time as uploadTime,type from announcement")
     public List<Announcement> getAll();
 
 
