@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class ConfigIOCTest {
@@ -24,6 +26,14 @@ public class ConfigIOCTest {
         AnnouncementMapper announcementMapper = applicationContext.getBean(AnnouncementMapper.class);
         Announcement announce = announcementMapper.getAnnounceById(1);
         System.out.println(announce);
+
+    }
+
+    @Test
+    public void testGetAllAnnoucenments(){
+        AnnouncementMapper announcementMapper = applicationContext.getBean(AnnouncementMapper.class);
+        List<Announcement> all = announcementMapper.getAll();
+        System.out.println(all);
 
     }
 }
