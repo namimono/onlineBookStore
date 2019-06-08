@@ -1,6 +1,8 @@
 package com.hx5847.beans;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class Announcement {
@@ -49,7 +51,7 @@ public class Announcement {
   public void setTitle(String title) {
     this.title = title;
   }
-
+  @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
   public Timestamp getUploadTime() {
     return uploadTime;
   }
