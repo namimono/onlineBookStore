@@ -57,8 +57,16 @@ public class AnnounceController {
     @RequestMapping(value = "/announcement",method = RequestMethod.POST)
     public String insertAnnouncement(@RequestBody Announcement announcement){
         System.out.println(announcement);
-//        announceService.insertAnnouncement(announcement);
+        announceService.insertAnnouncement(announcement);
 
+        return "success";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/announcement/{id}",method = RequestMethod.PUT)
+    public String updateAnnouncement(@RequestBody Announcement announcement){
+        System.out.println(announcement);
+        announceService.updateAnnouncement(announcement);
         return "success";
     }
 

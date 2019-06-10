@@ -14,6 +14,13 @@ public class Announcement {
   private String content;
 
 
+  public Announcement(Integer annoId, String title, String type, String content) {
+    this.annoId = annoId;
+    this.title = title;
+    this.type = type;
+    this.content = content;
+  }
+
   public Announcement() {
   }
 

@@ -4,6 +4,7 @@ import com.hx5847.beans.Announcement;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface AnnouncementMapper {
 
     @Insert("insert into announcement (title,type,content) values (#{title},#{type},#{content})")
     public void insertAnnouncement(Announcement announcement);
+
+    @Update("update announcement set title=#{title},type=#{type},content=#{content} WHERE (anno_id=#{annoId})")
+    public void updateAnnouncement(Announcement announcement);
 }

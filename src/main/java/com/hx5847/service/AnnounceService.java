@@ -27,4 +27,8 @@ public class AnnounceService {
     public void insertAnnouncement(Announcement announcement) {
         announcementMapper.insertAnnouncement(announcement);
     }
+
+    public void updateAnnouncement(Announcement announcement) {
+        announcementMapper.updateAnnouncement(announcement);
+    }
 }

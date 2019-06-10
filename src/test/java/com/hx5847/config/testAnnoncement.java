@@ -35,4 +35,14 @@ public class testAnnoncement {
 
 
     }
+    @Test
+    public void testUpdateAnnouncement(){
+
+
+        AnnouncementMapper announcementMapper = applicationContext.getBean(AnnouncementMapper.class);
+        Announcement announcement = new Announcement(8, "表题", "type", "content");
+        announcementMapper.updateAnnouncement(announcement);
+
+
+    }
 }
