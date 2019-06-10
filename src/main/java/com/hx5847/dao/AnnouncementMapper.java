@@ -8,7 +8,7 @@ import java.util.List;
 
 //@Mapper
 public interface AnnouncementMapper {
-    @Select("select title,upload_time,type from announcement where anno_id=#{id}")
+    @Select("select anno_id as annoId ,title,upload_time as uploadTime,type,content from announcement where anno_id=#{id}")
     public Announcement getAnnounceById(Integer id);
 
 

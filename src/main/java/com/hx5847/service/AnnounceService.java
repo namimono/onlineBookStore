@@ -18,4 +18,9 @@ public class AnnounceService {
         List<Announcement> list = announcementMapper.getAll();
         return list;
     }
+
+    public Announcement getAnnouncement(Integer id){
+        Announcement announce = announcementMapper.getAnnounceById(id);
+        return announce;
+    }
 }
