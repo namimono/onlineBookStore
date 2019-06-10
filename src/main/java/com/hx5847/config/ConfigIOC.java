@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
@@ -55,7 +56,15 @@ public class ConfigIOC {
         return new DataSourceTransactionManager(dataSource());
     }
 
-
+//配置字符编码过滤
+//    @Bean
+//    public CharacterEncodingFilter characterEncodingFilter(){
+//        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+//        characterEncodingFilter.setEncoding("utf-8");
+//        characterEncodingFilter.setForceRequestEncoding(true);
+//        characterEncodingFilter.setForceResponseEncoding(true);
+//        return characterEncodingFilter;
+//    }
     @Bean
     public Object testBean(){
 

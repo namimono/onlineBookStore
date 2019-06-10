@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -47,7 +49,7 @@ public class AnnounceController {
 //    }
     @ResponseBody
     @RequestMapping(value = "/announcement",method = RequestMethod.POST)
-    public String insertAnnouncement( Announcement announcement){
+    public String insertAnnouncement(Announcement announcement){
         System.out.println(announcement);
 //        announceService.insertAnnouncement(announcement);
 
