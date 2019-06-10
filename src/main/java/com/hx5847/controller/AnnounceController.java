@@ -1,16 +1,20 @@
 package com.hx5847.controller;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hx5847.beans.Announcement;
 import com.hx5847.service.AnnounceService;
+import com.hx5847.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @CrossOrigin(origins = "*")
 @Controller
 public class AnnounceController {
@@ -41,16 +45,18 @@ public class AnnounceController {
 
 //    @ResponseBody
 //    @RequestMapping(value = "/announcement2",method = RequestMethod.POST)
-//    public String insertAnnouncement(@RequestBody  String param){
+//    public String insertAnnouncement(@RequestBody  String param) throws IOException {
 //        System.out.println(param);
+//        Announcement announcement = JsonUtil.parse(param, Announcement.class);
+//        System.out.println(announcement);
 ////        announceService.insertAnnouncement(announcement);
 //
 //        return "success";
 //    }
     @ResponseBody
     @RequestMapping(value = "/announcement",method = RequestMethod.POST)
-    public String insertAnnouncement(@RequestBody Announcement[] announcements){
-        System.out.println(announcements);
+    public String insertAnnouncement(@RequestBody Announcement announcement){
+        System.out.println(announcement);
 //        announceService.insertAnnouncement(announcement);
 
         return "success";
