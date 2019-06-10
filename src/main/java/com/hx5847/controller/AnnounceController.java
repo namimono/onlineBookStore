@@ -37,10 +37,19 @@ public class AnnounceController {
         return announcement;
     }
 
+//    @ResponseBody
+//    @RequestMapping(value = "/announcement",method = RequestMethod.POST)
+//    public String insertAnnouncement(String param){
+//        System.out.println(param);
+////        announceService.insertAnnouncement(announcement);
+//
+//        return "success";
+//    }
     @ResponseBody
     @RequestMapping(value = "/announcement",method = RequestMethod.POST)
-    public String insertAnnouncement(Announcement announcement){
-        announceService.insertAnnouncement(announcement);
+    public String insertAnnouncement( Announcement announcement){
+        System.out.println(announcement);
+//        announceService.insertAnnouncement(announcement);
 
         return "success";
     }

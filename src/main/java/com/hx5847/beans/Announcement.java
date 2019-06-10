@@ -34,7 +34,11 @@ public class Announcement {
     this.content = content;
   }
 
-  public Announcement(Integer annoId, String title, Timestamp uploadTime, String type, String content) {
+    public Announcement(String content) {
+        this.content = content;
+    }
+
+    public Announcement(Integer annoId, String title, Timestamp uploadTime, String type, String content) {
     this.annoId = annoId;
     this.title = title;
     this.uploadTime = uploadTime;
