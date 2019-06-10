@@ -37,4 +37,12 @@ public class AnnounceController {
         return announcement;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/announcement",method = RequestMethod.POST)
+    public String insertAnnouncement(Announcement announcement){
+        announceService.insertAnnouncement(announcement);
+
+        return "success";
+    }
+
 }

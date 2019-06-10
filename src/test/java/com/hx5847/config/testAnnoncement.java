@@ -25,4 +25,14 @@ public class testAnnoncement {
         System.out.println(announce);
 
     }
+
+    @Test
+    public void testInsertAnnouncement(){
+
+
+        AnnouncementMapper announcementMapper = applicationContext.getBean(AnnouncementMapper.class);
+        announcementMapper.insertAnnouncement(new Announcement("表题","type","content"));
+
+
+    }
 }

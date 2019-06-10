@@ -23,4 +23,8 @@ public class AnnounceService {
         Announcement announce = announcementMapper.getAnnounceById(id);
         return announce;
     }
+
+    public void insertAnnouncement(Announcement announcement) {
+        announcementMapper.insertAnnouncement(announcement);
+    }
 }

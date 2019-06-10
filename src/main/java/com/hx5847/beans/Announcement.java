@@ -28,6 +28,12 @@ public class Announcement {
             '}';
   }
 
+  public Announcement(String title, String type, String content) {
+    this.title = title;
+    this.type = type;
+    this.content = content;
+  }
+
   public Announcement(Integer annoId, String title, Timestamp uploadTime, String type, String content) {
     this.annoId = annoId;
     this.title = title;
