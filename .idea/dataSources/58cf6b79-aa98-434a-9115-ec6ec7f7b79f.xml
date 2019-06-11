@@ -944,118 +944,118 @@
     </column>
     <column id="244" parent="235" name="url">
       <Position>2</Position>
-      <DataType>varchar(50)|0s</DataType>
+      <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="235" name="last_mdf_time">
+    <column id="245" parent="235" name="pic_url">
       <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="235" name="last_mdf_time">
+      <Position>4</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
-    <column id="246" parent="235" name="location">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+    <column id="247" parent="235" name="location">
+      <Position>5</Position>
+      <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="235" name="live_time">
-      <Position>5</Position>
+    <column id="248" parent="235" name="live_time">
+      <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="248" parent="235" name="PRIMARY">
+    <key id="249" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>adv_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="249" parent="236" name="anno_id">
+    <column id="250" parent="236" name="anno_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="236" name="title">
+    <column id="251" parent="236" name="title">
       <Position>2</Position>
       <DataType>varchar(70)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="236" name="upload_time">
+    <column id="252" parent="236" name="upload_time">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="236" name="type">
+    <column id="253" parent="236" name="type">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="236" name="content">
+    <column id="254" parent="236" name="content">
       <Position>5</Position>
       <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="236" name="PRIMARY">
+    <key id="255" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>anno_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="255" parent="237" name="book_id">
+    <column id="256" parent="237" name="book_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="237" name="author">
+    <column id="257" parent="237" name="author">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="237" name="year">
+    <column id="258" parent="237" name="year">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="237" name="title">
+    <column id="259" parent="237" name="title">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="237" name="language_code">
+    <column id="260" parent="237" name="language_code">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="237" name="average_rating">
+    <column id="261" parent="237" name="average_rating">
       <Position>6</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="237" name="click">
+    <column id="262" parent="237" name="click">
       <Position>7</Position>
       <DataType>int(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="237" name="collection">
+    <column id="263" parent="237" name="collection">
       <Position>8</Position>
       <DataType>int(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="237" name="image_url">
+    <column id="264" parent="237" name="image_url">
       <Position>9</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="264" parent="237" name="index_title_author">
-      <ColNames>title
-author</ColNames>
-      <Type>btree</Type>
-    </index>
     <key id="265" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>book_id</ColNames>
