@@ -13,19 +13,29 @@ public class Advertisement {
   private String picUrl;
   private java.sql.Timestamp lastMdfTime;
   private String location;
-  private java.sql.SQLData liveTime;
 
   public Advertisement() {
   }
 
+  public Advertisement(Integer advId, String url, String picUrl, String location) {
+    this.advId = advId;
+    this.url = url;
+    this.picUrl = picUrl;
+    this.location = location;
+  }
 
-  public Advertisement(Integer advId, String url, String picUrl, Timestamp lastMdfTime, String location, SQLData liveTime) {
+  public Advertisement(Integer advId, String url, String picUrl, Timestamp lastMdfTime, String location) {
     this.advId = advId;
     this.url = url;
     this.picUrl = picUrl;
     this.lastMdfTime = lastMdfTime;
     this.location = location;
-    this.liveTime = liveTime;
+  }
+
+  public Advertisement(Integer advId, String url, String location) {
+    this.advId = advId;
+    this.url = url;
+    this.location = location;
   }
 
   public Integer getAdvId() {
@@ -69,14 +79,6 @@ public class Advertisement {
     this.location = location;
   }
 
-  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
-  public SQLData getLiveTime() {
-    return liveTime;
-  }
-
-  public void setLiveTime(SQLData liveTime) {
-    this.liveTime = liveTime;
-  }
 
   @Override
   public String toString() {
@@ -86,7 +88,6 @@ public class Advertisement {
             ", picUrl='" + picUrl + '\'' +
             ", lastMdfTime=" + lastMdfTime +
             ", location='" + location + '\'' +
-            ", liveTime=" + liveTime +
             '}';
   }
 }

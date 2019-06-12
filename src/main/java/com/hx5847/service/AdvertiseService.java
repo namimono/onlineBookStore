@@ -20,4 +20,11 @@ public class AdvertiseService {
         return list;
     }
 
+    public Advertisement getAdvertise(Integer id) {
+        return advertisementMapper.getAdvertisementById(id);
+    }
+
+    public void updateAdvertise(Advertisement advertisement) {
+        advertisementMapper.updateAdvertisement(advertisement);
+    }
 }

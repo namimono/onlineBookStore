@@ -37,4 +37,5 @@ public class ConfigMVC extends WebMvcConfigurerAdapter {
 //        converters.add(new MappingJackson2HttpMessageConverter(builder.build()));
 //        converters.add(new MappingJackson2XmlHttpMessageConverter(builder.createXmlMapper(true).build()));
 //    }
+
 }

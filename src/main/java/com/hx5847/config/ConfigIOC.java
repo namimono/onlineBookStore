@@ -10,6 +10,7 @@ import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
@@ -65,6 +66,12 @@ public class ConfigIOC {
 //        characterEncodingFilter.setForceResponseEncoding(true);
 //        return characterEncodingFilter;
 //    }
+    @Bean
+    public CommonsMultipartResolver multipartResolver(){
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+
+        return commonsMultipartResolver;
+    }
     @Bean
     public Object testBean(){
 
