@@ -1,6 +1,7 @@
 package com.hx5847.controller;
 
 import com.hx5847.beans.Advertisement;
+import com.hx5847.exceptions.UpdateException;
 import com.hx5847.service.AdvertiseService;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,10 @@ public class AdvertiseController {
         }
 
     }
+    @ResponseBody
     @RequestMapping(value = "/updateAdvertise" ,method = RequestMethod.POST)
     public String  updateAdvertise(@RequestParam(value = "file",required = false) CommonsMultipartFile file, Advertisement advertisement) throws IOException {
+        String msg=null;
         System.out.println(advertisement);
         System.out.println(file);
 //        判断文件是否为空，如果不为空保存文件，并更新对象中的PicUrl
@@ -61,10 +64,14 @@ public class AdvertiseController {
             System.out.println("fileName："+file.getOriginalFilename());
             advertisement.setPicUrl("static/"+file.getOriginalFilename());
         }
-        advertiseService.updateAdvertise(advertisement);
+        try {
+            msg=advertiseService.updateAdvertise(advertisement);
+        } catch (UpdateException e) {
+            msg="fail";
+        }
 //        Advertisement advertise = advertiseService.getAdvertise(id);
 
-        return "redirect:http://localhost:8081/#/adminView/AdvertiseContentView";
+        return msg;
     }
 //    @ResponseBody
 //    @RequestMapping(value = "/a" ,method = RequestMethod.POST)

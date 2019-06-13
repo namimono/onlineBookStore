@@ -24,5 +24,8 @@ public interface AdvertisementMapper {
 
 //    @Update("update advertisement set url=#{url},pic_url=#{picUrl},location=#{location} WHERE (adv_id=#{advId})")
     @UpdateProvider(type = AdvertiseProvider.class,method = "updateAdvertisement")
-    void updateAdvertisement(Advertisement advertisement);
+    public void updateAdvertisement(Advertisement advertisement);
+
+    @Select("select * from advertisement where location=#{location}")
+    public List<Advertisement> getAdvertisementByLocation(String location);
 }

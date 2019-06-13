@@ -4,7 +4,10 @@ import com.hx5847.beans.Advertisement;
 import com.hx5847.beans.Announcement;
 import com.hx5847.dao.AdvertisementMapper;
 import com.hx5847.dao.AnnouncementMapper;
+import com.hx5847.exceptions.UpdateException;
+import com.hx5847.service.AdvertiseService;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,7 +17,8 @@ import java.util.Map;
 
 public class testAdvertise {
     private ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ConfigIOC.class);
-
+//    @Autowired
+//    private AdvertiseService advertiseService;
 
     @Test
     public void testSelectAdvertise() {
@@ -49,5 +53,19 @@ public class testAdvertise {
 //        map.put(b.getAdvId(), b);
         System.out.println(map.get(b.getAdvId()));
 //        advertiseService.updateAdvertise(map.get(advertisement.getAdvId()));
+    }
+    @Test
+    public void testgetMiddleAdvertise() {
+//        AdvertisementMapper advertisementMapper = applicationContext.getBean(AdvertisementMapper.class);
+        AdvertiseService advertiseService = applicationContext.getBean(AdvertiseService.class);
+//        List<Advertisement> list = advertisementMapper.getAdvertisementByLocation(new Advertisement("middle"));
+        Advertisement middle = new Advertisement(3,"aaa","carousel");
+        String ms = null;
+        try {
+            ms = advertiseService.updateAdvertise(middle);
+        } catch (UpdateException e) {
+            ms="fail";
+        }
+        System.out.println(ms);
     }
 }

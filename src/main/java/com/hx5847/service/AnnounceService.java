@@ -5,9 +5,11 @@ import com.hx5847.beans.Announcement;
 import com.hx5847.dao.AnnouncementMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional
 @Service
 public class AnnounceService {
     @Autowired

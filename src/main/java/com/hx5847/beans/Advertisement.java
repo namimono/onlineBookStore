@@ -17,6 +17,12 @@ public class Advertisement {
   public Advertisement() {
   }
 
+  public Advertisement(String location) {
+    this.location = location;
+  }
+
+
+
   public Advertisement(Integer advId, String url, String picUrl, String location) {
     this.advId = advId;
     this.url = url;
