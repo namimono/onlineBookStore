@@ -64,6 +64,10 @@ public class AdvertiseController {
             System.out.println("fileName："+file.getOriginalFilename());
             advertisement.setPicUrl("static/"+file.getOriginalFilename());
         }
+        if(advertisement.getAdvId()==null){
+            String s = advertiseService.insertAdvertise(advertisement);
+            return s;
+        }
         try {
             msg=advertiseService.updateAdvertise(advertisement);
         } catch (UpdateException e) {

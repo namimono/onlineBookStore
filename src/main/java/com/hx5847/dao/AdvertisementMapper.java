@@ -18,8 +18,6 @@ public interface AdvertisementMapper {
     @Select("select adv_id as advId,url,pic_url as picUrl ,last_mdf_time as lastMdfTime, location from advertisement")
     public List<Advertisement> getAll();
 
-    @Insert("insert into announcement (url,pic_url,location) values (#{url},#{picUrl},#{location})")
-    public void insertAnnouncement(Advertisement announcement);
 
 
 //    @Update("update advertisement set url=#{url},pic_url=#{picUrl},location=#{location} WHERE (adv_id=#{advId})")
@@ -28,4 +26,7 @@ public interface AdvertisementMapper {
 
     @Select("select * from advertisement where location=#{location}")
     public List<Advertisement> getAdvertisementByLocation(String location);
+
+    @Insert("insert into advertisement (url,pic_url,location) values (#{url},#{picUrl},#{location})")
+    public void insertAdvertisement(Advertisement advertisement);
 }

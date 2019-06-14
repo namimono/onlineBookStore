@@ -68,4 +68,11 @@ public class testAdvertise {
         }
         System.out.println(ms);
     }
+    @Test
+    public void testInsertAdvertise() {
+        AdvertiseService advertiseService = applicationContext.getBean(AdvertiseService.class);
+        Advertisement middle = new Advertisement(null,"aaa","sssss","middle");
+        String s = advertiseService.insertAdvertise(middle);
+        System.out.println(s);
+    }
 }

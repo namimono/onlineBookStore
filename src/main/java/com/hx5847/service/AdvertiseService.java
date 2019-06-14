@@ -26,14 +26,15 @@ public class AdvertiseService {
     public Advertisement getAdvertise(Integer id) {
         return advertisementMapper.getAdvertisementById(id);
     }
+
     public String  insertAdvertise(Advertisement advertisement){
         if (advertisement.getLocation().equals("middle")||advertisement.getLocation().equals("tail")){
             List<Advertisement> list = advertisementMapper.getAdvertisementByLocation(advertisement.getLocation());
             if (list.size()>0){
                 return "fail";
-            }
+            } 
         }
-//        advertisementMapper.updateAdvertisement(advertisement);
+        advertisementMapper.insertAdvertisement(advertisement);
         return "success";
 
     }
