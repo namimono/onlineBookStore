@@ -39,16 +39,16 @@ public class AdvertiseController {
         return advertise;
     }
 
-    @ModelAttribute
-    public void getAdvBefore(@RequestParam(value = "id",required = false) Integer id,Map<String,Advertisement> map){
-        if (id!=null){
-            Advertisement advertise = advertiseService.getAdvertise(id);
-            map.put("adv",advertise);
-
-
-        }
-
-    }
+//    @ModelAttribute
+//    public void getAdvBefore(@RequestParam(value = "id",required = false) Integer id,Map<String,Advertisement> map){
+//        if (id!=null){
+//            Advertisement advertise = advertiseService.getAdvertise(id);
+//            map.put("adv",advertise);
+//
+//
+//        }
+//
+//    }
     @ResponseBody
     @RequestMapping(value = "/updateAdvertise" ,method = RequestMethod.POST)
     public String  updateAdvertise(@RequestParam(value = "file",required = false) CommonsMultipartFile file, Advertisement advertisement) throws IOException {
