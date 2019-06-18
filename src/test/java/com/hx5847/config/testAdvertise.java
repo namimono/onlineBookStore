@@ -75,4 +75,9 @@ public class testAdvertise {
         String s = advertiseService.insertAdvertise(middle);
         System.out.println(s);
     }
+    @Test
+    public void testDelAdvertise() {
+        AdvertiseService advertiseService = applicationContext.getBean(AdvertiseService.class);
+        advertiseService.delAdvertise(10);
+    }
 }

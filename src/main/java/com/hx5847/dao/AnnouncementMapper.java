@@ -1,10 +1,7 @@
 package com.hx5847.dao;
 
 import com.hx5847.beans.Announcement;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,4 +19,8 @@ public interface AnnouncementMapper {
 
     @Update("update announcement set title=#{title},type=#{type},content=#{content} WHERE (anno_id=#{annoId})")
     public void updateAnnouncement(Announcement announcement);
+
+
+    @Delete("delete from announcement where anno_id=#{id}")
+    public void delAnnouncement(Integer id);
 }

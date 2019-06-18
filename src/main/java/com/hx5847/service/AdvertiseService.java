@@ -56,4 +56,10 @@ public class AdvertiseService {
 //        }
         return "success";
     }
+
+    public String delAdvertise(Integer id) {
+
+        advertisementMapper.delAdvertise(id);
+        return "success";
+    }
 }

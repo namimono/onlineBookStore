@@ -33,4 +33,8 @@ public class AnnounceService {
     public void updateAnnouncement(Announcement announcement) {
         announcementMapper.updateAnnouncement(announcement);
     }
+    public String delAnnouncement(Integer id) {
+        announcementMapper.delAnnouncement(id);
+        return "success";
+    }
 }

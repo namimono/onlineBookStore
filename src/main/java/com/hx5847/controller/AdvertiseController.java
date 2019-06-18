@@ -39,6 +39,13 @@ public class AdvertiseController {
         return advertise;
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/advertise/{id}" ,method = RequestMethod.DELETE)
+    public String delAdvertise(@PathVariable("id") Integer id){
+
+        String msg=advertiseService.delAdvertise(id);
+        return msg;
+    }
 //    @ModelAttribute
 //    public void getAdvBefore(@RequestParam(value = "id",required = false) Integer id,Map<String,Advertisement> map){
 //        if (id!=null){

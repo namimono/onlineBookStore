@@ -45,4 +45,13 @@ public class testAnnoncement {
 
 
     }
+    @Test
+    public void testDelAnnouncement(){
+
+
+        AnnouncementMapper announcementMapper = applicationContext.getBean(AnnouncementMapper.class);
+        announcementMapper.delAnnouncement(11);
+
+
+    }
 }

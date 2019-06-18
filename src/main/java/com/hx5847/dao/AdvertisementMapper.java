@@ -2,10 +2,7 @@ package com.hx5847.dao;
 
 import com.hx5847.beans.Advertisement;
 import com.hx5847.beans.Announcement;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.annotations.UpdateProvider;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -29,4 +26,7 @@ public interface AdvertisementMapper {
 
     @Insert("insert into advertisement (url,pic_url,location) values (#{url},#{picUrl},#{location})")
     public void insertAdvertisement(Advertisement advertisement);
+
+    @Delete("delete from advertisement where adv_id=#{id}")
+    public void delAdvertise(Integer id);
 }

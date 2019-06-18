@@ -70,4 +70,13 @@ public class AnnounceController {
         return "success";
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/announcement/{id}",method = RequestMethod.DELETE)
+    public String delAnnouncement(@PathVariable("id") Integer id){
+        String msg = announceService.delAnnouncement(id);
+        System.out.println("删除"+id);
+
+        return msg;
+    }
+
 }
