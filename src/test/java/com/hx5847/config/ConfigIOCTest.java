@@ -102,15 +102,17 @@ public class ConfigIOCTest {
         sql.append("SELECT * FROM books WHERE book_id IN(");
         sql.append(childSql+")");
         sql.append(" ORDER BY "+condition+" DESC");
+//        sql.append(" limit 0,100");
         System.out.println(sql);
     }
     @Test
     public void testGetRank(){
         BooksMapper booksMapper = applicationContext.getBean(BooksMapper.class);
-        String[] types=new String[]{"都市","魔幻"};
+//        String[] types=new String[]{"都市","魔幻"};
+        String[] types=new String[]{};
         String condition="click";
         List<Book> books = booksMapper.getRank(types, condition);
-        System.out.println(books);
+//        System.out.println(books);
 
 
     }

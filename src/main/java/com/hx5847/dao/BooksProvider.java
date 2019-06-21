@@ -10,6 +10,10 @@ public class BooksProvider {
 //    public String getBookRank(final String[] types,final String condition){
     public String getBookRank(Map<String, Object> para){
         final String[] types= (String[]) para.get("types");
+        for (int i = 0; i < types.length; i++) {
+            System.out.println(types[i]);
+
+        }
         final String condition= (String) para.get("condition");
         StringBuffer sql=new StringBuffer();
         String childSql=new SQL(){
@@ -30,6 +34,8 @@ public class BooksProvider {
         sql.append("SELECT * FROM books WHERE book_id IN(");
         sql.append(childSql+")");
         sql.append(" ORDER BY "+condition+" DESC");
+        sql.append(" limit 0,100");
+
         System.out.println(sql);
 //        sql.append("SELECT * FROM books WHERE book_id IN");
 //
