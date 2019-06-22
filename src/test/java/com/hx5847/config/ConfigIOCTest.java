@@ -15,9 +15,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -108,12 +106,33 @@ public class ConfigIOCTest {
     @Test
     public void testGetRank(){
         BooksMapper booksMapper = applicationContext.getBean(BooksMapper.class);
-//        String[] types=new String[]{"都市","魔幻"};
-        String[] types=new String[]{};
-        String condition="click";
-        List<Book> books = booksMapper.getRank(types, condition);
-//        System.out.println(books);
+        String[] types=new String[]{"都市","魔幻"};
+        Map<String ,Object> map=new HashMap<String,Object>();
+        map.put("types",types);
+        map.put("condition","click");
+        types= (String[]) map.get("types");
+        String condition= (String) map.get("condition");
+        System.out.println(types);
+        System.out.println(condition);
+//        System.out.println(map);
 
+//        String[] types=new String[]{};
+//        String condition="click";
+        List<Book> books = booksMapper.getRank(types, condition);
+        System.out.println(books);
+
+
+    }
+    @Test
+    public void test2GetRank(){
+        // 构建一个集合
+        List<String> list = new ArrayList<String>();
+        list.add("Calligraphy is the art of beautiful handwriting.");
+        list.add("He really takes good care of his sister.What a thoughtful boy!");
+        list.add("Working hard in the gymnasium keeps us fit.");
+
+        // 转为数组
+        String[] strings = list.toArray(new String[list.size()]);
 
     }
 }
