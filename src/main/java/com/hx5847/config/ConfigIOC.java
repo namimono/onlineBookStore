@@ -7,6 +7,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -46,9 +47,10 @@ public class ConfigIOC {
 //整合mybatis
     @Bean
     public SqlSessionFactoryBean sqlSessionFactoryBean() throws PropertyVetoException {
-
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
+        sqlSessionFactoryBean.setConfigLocation(resolver.getResource("classpath:mybatis-config.xml"));
         return sqlSessionFactoryBean;
     }
 
