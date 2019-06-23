@@ -4,6 +4,7 @@ import com.hx5847.beans.Announcement;
 import com.hx5847.beans.Book;
 import com.hx5847.dao.AnnouncementMapper;
 import com.hx5847.dao.BooksMapper;
+import com.hx5847.dao.UserMapper;
 import com.hx5847.dao.testMapper;
 import org.apache.ibatis.jdbc.SQL;
 import org.aspectj.weaver.ast.Or;
@@ -124,15 +125,13 @@ public class ConfigIOCTest {
 
     }
     @Test
-    public void test2GetRank(){
-        // 构建一个集合
-        List<String> list = new ArrayList<String>();
-        list.add("Calligraphy is the art of beautiful handwriting.");
-        list.add("He really takes good care of his sister.What a thoughtful boy!");
-        list.add("Working hard in the gymnasium keeps us fit.");
-
-        // 转为数组
-        String[] strings = list.toArray(new String[list.size()]);
+    public void getBooksByTypes(){
+        BooksMapper booksMapper = applicationContext.getBean(BooksMapper.class);
+        List<String> list=new ArrayList<String>();
+        list.add("魔幻");
+        list.add("军事");
+        List<Integer> booksIdByTypes = booksMapper.getBooksIdByTypes(list);
+        System.out.println(booksIdByTypes);
 
     }
 }

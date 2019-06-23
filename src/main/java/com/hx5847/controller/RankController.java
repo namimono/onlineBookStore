@@ -27,25 +27,11 @@ public class RankController {
     @RequestMapping(value = "/getRank", method = RequestMethod.POST)
     public List<Book> getRank(@RequestBody Map<String, Object> map) {
         System.out.println(map);
-//        System.out.println(map.get("types").getClass());
         ArrayList<String> list= (ArrayList) map.get("types");
         String[] types = list.toArray(new String[list.size()]);
-//        System.out.println(types);
-
-//        String[] objects = (String[])list.toArray();
-//        System.out.println(objects);
-//        String types= (String) map.get("types");
-//        System.out.println(types);
-//        String[] types= (String[]) map.get("types");
-//
         String condition= (String) map.get("condition");
-//        System.out.println(condition);
         System.out.println(map.get("condition"));
-//        System.out.println(types);
-//        System.out.println(condition);
         List<Book> rankBooks = rankService.getRankBooks(types, condition);
-//        System.out.println(rankBooks);
-//        List<Book> list = announceService.getAllAnnouncements();
 
         return rankBooks;
     }
