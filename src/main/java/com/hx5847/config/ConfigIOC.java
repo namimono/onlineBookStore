@@ -1,5 +1,6 @@
 package com.hx5847.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
@@ -37,12 +38,17 @@ public class ConfigIOC {
 //    配置c3p0数据源
     @Bean
     public DataSource dataSource() throws PropertyVetoException {
-        ComboPooledDataSource dataSource=new ComboPooledDataSource();
-        dataSource.setUser(user);
-        dataSource.setJdbcUrl(url);
-        dataSource.setDriverClass(driver);
-        dataSource.setPassword(password);
-        return dataSource;
+        ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
+        comboPooledDataSource.setDriverClass(driver);
+        comboPooledDataSource.setUser(user);
+        comboPooledDataSource.setJdbcUrl(url);
+        comboPooledDataSource.setPassword(password);
+//        DruidDataSource  dataSource=new DruidDataSource();
+//        dataSource.setUsername(user);
+//        dataSource.setUrl(url);
+//        dataSource.setDriverClassName(driver);
+//        dataSource.setPassword(password);
+        return comboPooledDataSource;
     }
 //整合mybatis
     @Bean

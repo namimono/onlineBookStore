@@ -1,7 +1,7 @@
 package com.hx5847.beans;
 
 
-public class Book {
+public class Book extends Usersmessage {
 
   private Integer bookId;
   private String author;

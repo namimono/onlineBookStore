@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="onlineBookStore:war">
+    <output-path>D:/apache-tomcat-7.0.96/webapps/onlineBookStore</output-path>
+    <root id="archive" name="onlineBookStore_war.war">
+      <element id="artifact" artifact-name="onlineBookStore:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="onlineBookStore:war exploded">
-    <output-path>D:/MyEclipse/apache-tomcat-8.5.41/webapps/onlineBookStore</output-path>
+    <output-path>D:/apache-tomcat-7.0.96/webapps/onlineBookStore</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

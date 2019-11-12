@@ -21,7 +21,7 @@ public class UserService {
     @Autowired
     BooksMapper booksMapper;
 
-    public Map<String,Object> getUserRecommendById(Integer id){
+    public Map<String,Object> getUserRecommend(Integer id){
         String name= userMapper.getUserNameById(id);
         System.out.println("----------------->"+name);
 //        获取用户推荐列表时先判断用户是否存在

@@ -21,7 +21,7 @@ public class RecommendController {
     @ResponseBody
     @RequestMapping(value = "/getUserRecommend/{id}", method = RequestMethod.GET)
     public Map<String ,Object> getUserRecommend(@PathVariable("id") Integer id){
-        Map<String, Object> userRecommend = userService.getUserRecommendById(id);
+        Map<String, Object> userRecommend = userService.getUserRecommend(id);
         if (userRecommend==null){
             return null;
         }
